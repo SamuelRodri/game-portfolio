@@ -61,7 +61,7 @@
     "engine": "Unity",
     "language": "C#",
     "year": 2024,
-    "category": ["vr"],
+    "category": ["vr", "proyecto"],
     "description": "Experiencia inmersiva de escape room en realidad virtual.",
     "tags": ["VR", "Unity", "C#", "Interactive"],
     "images": [],
