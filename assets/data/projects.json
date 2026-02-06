@@ -1,13 +1,13 @@
 [
   {
-    "id": "space-shooter",
-    "title": "Space Shooter",
+    "id": "vandamme",
+    "title": "Proyecto Van Damme",
     "engine": "Unity",
     "language": "C#",
     "year": 2024,
     "category": ["proyecto"],
-    "description": "Shooter espacial 2D con enemigos controlados por IA.",
-    "tags": ["Unity", "C#", "2D"],
+    "description": "Videojuego de estrategia con conquista de países mediante combate de cartas.",
+    "tags": ["Unity", "C#", "2D", "Estrategia"],
     "images": [
       "https://via.placeholder.com/1200x600.png?text=Space+Shooter"
     ],
