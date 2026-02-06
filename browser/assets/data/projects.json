@@ -1,0 +1,35 @@
+[
+  {
+    "id": "space-shooter",
+    "title": "Space Shooter",
+    "engine": "Unity",
+    "language": "C#",
+    "year": 2024,
+    "category": "proyecto",
+    "description": "Shooter espacial 2D con enemigos controlados por IA y sistema de power-ups.",
+    "tags": ["Unity", "C#", "2D", "IA"],
+    "images": [
+      "assets/images/games/space-shooter/cover.png"
+    ],
+    "links": {
+      "github": "https://github.com/tuusuario/space-shooter"
+    }
+  },
+  {
+    "id": "pixel-adventure",
+    "title": "Pixel Adventure",
+    "engine": "Godot",
+    "language": "GDScript",
+    "year": 2024,
+    "category": "gamejam",
+    "description": "Juego de plataformas 2D estilo pixel art creado para GlobalGameJam 2024.",
+    "tags": ["Godot", "GDScript", "2D", "Platformer"],
+    "images": [
+      "assets/images/games/pixel-adventure/cover.png"
+    ],
+    "links": {
+      "github": "https://github.com/tuusuario/pixel-adventure",
+      "itch": "https://itch.io/tuusuario/pixel-adventure"
+    }
+  }
+]
