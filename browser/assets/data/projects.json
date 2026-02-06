@@ -1,0 +1,17 @@
+[
+  {
+    "id": "space-shooter",
+    "title": "Space Shooter",
+    "engine": "Unity",
+    "language": "C#",
+    "year": 2024,
+    "description": "Shooter espacial 2D con enemigos controlados por IA y sistema de power-ups.",
+    "tags": ["Unity", "C#", "2D", "IA"],
+    "images": [
+      "assets/images/games/space-shooter/cover.png"
+    ],
+    "links": {
+      "github": "https://github.com/tuusuario/space-shooter"
+    }
+  }
+]
