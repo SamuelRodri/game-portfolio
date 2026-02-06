@@ -1,0 +1,17 @@
+<h1>Game Developer Portfolio</h1>
+
+<section *ngIf="projects.length; else loading">
+  <article *ngFor="let project of projects">
+    <h2>{{ project.title }}</h2>
+    <p>{{ project.engine }} · {{ project.year }}</p>
+    <p>{{ project.description }}</p>
+
+    <a [routerLink]="['/project', project.id]">
+      Ver proyecto
+    </a>
+  </article>
+</section>
+
+<ng-template #loading>
+  <p>Cargando proyectos...</p>
+</ng-template>
