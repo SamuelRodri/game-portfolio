@@ -6,11 +6,53 @@
     "language": "C#",
     "year": 2024,
     "category": "proyecto",
-    "description": "Shooter espacial 2D con enemigos controlados por IA y sistema de power-ups.",
-    "tags": ["Unity", "C#", "2D", "IA"],
+    "description": "Shooter espacial 2D con enemigos controlados por IA.",
+    "tags": ["Unity", "C#", "2D"],
     "images": [],
     "links": {
       "github": "https://github.com/tuusuario/space-shooter"
+    }
+  },
+  {
+    "id": "puzzle-game",
+    "title": "Puzzle Master",
+    "engine": "Godot",
+    "language": "GDScript",
+    "year": 2024,
+    "category": "proyecto",
+    "description": "Juego de puzzles con mecánicas innovadoras.",
+    "tags": ["Godot", "GDScript", "Puzzle"],
+    "images": [],
+    "links": {
+      "github": "https://github.com/tuusuario/puzzle-master"
+    }
+  },
+  {
+    "id": "rpg-adventure",
+    "title": "Fantasy RPG",
+    "engine": "Unreal Engine",
+    "language": "C++",
+    "year": 2023,
+    "category": "proyecto",
+    "description": "RPG de fantasía con sistema de combate por turnos.",
+    "tags": ["Unreal", "C++", "RPG"],
+    "images": [],
+    "links": {
+      "github": "https://github.com/tuusuario/fantasy-rpg"
+    }
+  },
+  {
+    "id": "platformer-classic",
+    "title": "Jungle Runner",
+    "engine": "Unity",
+    "language": "C#",
+    "year": 2023,
+    "category": "proyecto",
+    "description": "Juego de plataformas estilo retro con progresión.",
+    "tags": ["Unity", "2D", "Platformer"],
+    "images": [],
+    "links": {
+      "github": "https://github.com/tuusuario/jungle-runner"
     }
   },
   {
@@ -21,11 +63,69 @@
     "year": 2024,
     "category": "gamejam",
     "description": "Juego de plataformas 2D estilo pixel art creado para GlobalGameJam 2024.",
-    "tags": ["Godot", "GDScript", "2D", "Platformer"],
+    "tags": ["Godot", "GDScript", "2D"],
     "images": [],
     "links": {
       "github": "https://github.com/tuusuario/pixel-adventure",
       "itch": "https://itch.io/tuusuario/pixel-adventure"
+    }
+  },
+  {
+    "id": "cosmic-runner",
+    "title": "Cosmic Runner",
+    "engine": "Unity",
+    "language": "C#",
+    "year": 2024,
+    "category": "gamejam",
+    "description": "Juego de carreras en el espacio creado en 48 horas.",
+    "tags": ["Unity", "C#", "Arcade"],
+    "images": [],
+    "links": {
+      "github": "https://github.com/tuusuario/cosmic-runner",
+      "itch": "https://itch.io/tuusuario/cosmic-runner"
+    }
+  },
+  {
+    "id": "escape-asylum",
+    "title": "Escape Asylum",
+    "engine": "Godot",
+    "language": "GDScript",
+    "year": 2023,
+    "category": "gamejam",
+    "description": "Juego de escape y supervivencia para Ludum Dare 53.",
+    "tags": ["Godot", "Adventure", "Puzzle"],
+    "images": [],
+    "links": {
+      "itch": "https://itch.io/tuusuario/escape-asylum"
+    }
+  },
+  {
+    "id": "time-paradox",
+    "title": "Time Paradox",
+    "engine": "Unity",
+    "language": "C#",
+    "year": 2023,
+    "category": "gamejam",
+    "description": "Puzzle de viajes en el tiempo. Game Jam: 48 Hours.",
+    "tags": ["Unity", "C#", "Puzzle"],
+    "images": [],
+    "links": {
+      "github": "https://github.com/tuusuario/time-paradox",
+      "itch": "https://itch.io/tuusuario/time-paradox"
+    }
+  },
+  {
+    "id": "neon-blast",
+    "title": "Neon Blast",
+    "engine": "Godot",
+    "language": "GDScript",
+    "year": 2024,
+    "category": "gamejam",
+    "description": "Shooter neon con efectos visuales. Global Game Jam 2024.",
+    "tags": ["Godot", "Shooter", "Action"],
+    "images": [],
+    "links": {
+      "itch": "https://itch.io/tuusuario/neon-blast"
     }
   }
 ]
