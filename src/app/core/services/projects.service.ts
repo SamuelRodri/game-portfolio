@@ -21,4 +21,30 @@ export class ProjectsService {
       map(projects => projects.find(p => p.id === id))
     );
   }
+
+  getByCategory(category: string): Observable<Project[]> {
+    return this.getAll().pipe(
+      map(projects => projects.filter(p =>
+        Array.isArray(p.category) ? p.category.includes(category as any) : p.category === category
+      ))
+    );
+  }
+
+  getGroupedByCategory(): Observable<Map<string, Project[]>> {
+    return this.getAll().pipe(
+      map(projects => {
+        const grouped = new Map<string, Project[]>();
+        projects.forEach(project => {
+          const categories = Array.isArray(project.category) ? project.category : [project.category];
+          categories.forEach(cat => {
+            if (!grouped.has(cat)) {
+              grouped.set(cat, []);
+            }
+            grouped.get(cat)!.push(project);
+          });
+        });
+        return grouped;
+      })
+    );
+  }
 }

@@ -1,17 +1,94 @@
-<h1>Game Developer Portfolio</h1>
+<section class="projects-section">
+  <ng-container *ngIf="getVisibleCategories().length > 0; else noProjects">
+    <!-- Carrusel por cada categoría -->
+    <div class="category-section" [attr.id]="category" *ngFor="let category of getVisibleCategories()">
+      <h2 class="category-title">{{ getCategoryLabel(category) }}</h2>
 
-<section *ngIf="projects.length; else loading">
-  <article *ngFor="let project of projects">
-    <h2>{{ project.title }}</h2>
-    <p>{{ project.engine }} · {{ project.year }}</p>
-    <p>{{ project.description }}</p>
+      <div class="carousel-container">
+        <!-- Bootstrap Carousel -->
+        <div [id]="'carousel-' + category" class="carousel slide" data-bs-ride="carousel">
+          <!-- Indicadores (opcional) -->
+          <div class="carousel-indicators">
+            <button *ngFor="let group of getProjectGroups(category); let i = index"
+              [attr.data-bs-target]="'#carousel-' + category"
+              [attr.data-bs-slide-to]="i"
+              [class.active]="i === 0"
+              [attr.aria-label]="'Diapositiva ' + (i + 1)">
+            </button>
+          </div>
 
-    <a [routerLink]="['/project', project.id]">
-      Ver proyecto
-    </a>
-  </article>
+          <!-- Contenedor de tarjetas -->
+          <div class="carousel-inner">
+            <div class="carousel-item" [class.active]="i === 0" *ngFor="let projectGroup of getProjectGroups(category); let i = index">
+              <div class="projects-grid">
+                <div class="card-wrapper" *ngFor="let project of projectGroup">
+                  <a [routerLink]="['/project', project.id]" class="card card-link">
+                    <div class="card-image">
+                      <img *ngIf="project.images && project.images[0]" [src]="project.images[0]" [alt]="project.title">
+                      <div *ngIf="!project.images || project.images.length === 0" class="card-placeholder">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="200" height="200" fill="#e9ecef"/>
+                          <circle cx="100" cy="60" r="25" fill="#adb5bd"/>
+                          <path d="M 50 200 Q 100 150 150 200" fill="#adb5bd"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h3 class="card-title">{{ project.title }}</h3>
+                      <p class="card-meta">{{ project.engine }} · {{ project.year }}</p>
+                      <p class="card-description">{{ project.description }}</p>
+
+                      <div class="card-tags" *ngIf="project.tags">
+                        <span class="tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botones de navegación -->
+          <button class="carousel-control-prev" [attr.data-bs-target]="'#carousel-' + category" data-bs-slide="prev"
+            [attr.aria-label]="'Anterior: ' + getCategoryLabel(category)">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" [attr.data-bs-target]="'#carousel-' + category" data-bs-slide="next"
+            [attr.aria-label]="'Siguiente: ' + getCategoryLabel(category)">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #noProjects>
+    <p class="loading">Cargando proyectos...</p>
+  </ng-template>
 </section>
 
-<ng-template #loading>
-  <p>Cargando proyectos...</p>
-</ng-template>
+<!-- Sección Sobre mi -->
+<section class="about-section" id="about">
+  <div class="about-container">
+    <h2 class="about-title">Sobre mí</h2>
+    <div class="about-content">
+      <p class="about-text">
+        Soy un desarrollador de videojuegos apasionado por crear experiencias interactivas y emocionantes.
+        Con experiencia en múltiples motores de juego y lenguajes de programación, me especializo en diseño
+        de mecánicas de juego, programación de sistemas y optimización de rendimiento.
+      </p>
+      <p class="about-text">
+        Mi creatividad y dedicación al detalle me permiten transformar ideas en juegos funcionales y pulidos.
+        Disfruto colaborando en game jams, donde experimento con nuevas tecnologías y conceptos creativos bajo presión.
+      </p>
+      <div class="about-skills">
+        <h3>Habilidades técnicas</h3>
+        <ul class="skills-list">
+          <li>Motores: Unity, Unreal Engine, Godot</li>
+          <li>Lenguajes: C#, C++, GDScript</li>
+          <li>Conceptos: Programación orientada a objetos, Sistemas de juego, IA, Optimización</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

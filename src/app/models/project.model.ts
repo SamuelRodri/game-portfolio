@@ -4,6 +4,7 @@ export interface Project {
   engine: string;
   language: string;
   year: number;
+  category: ('proyecto' | 'gamejam' | 'vr')[];
   description: string;
   tags: string[];
   images: string[];

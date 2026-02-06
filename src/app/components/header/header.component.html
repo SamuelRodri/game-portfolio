@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="header-content">
+      <a [routerLink]="['/']" class="brand" aria-label="Ir al inicio">
+        <div class="avatar">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Professional avatar background -->
+            <rect width="200" height="200" fill="#f5f5f5"/>
+            <!-- Head -->
+            <circle cx="100" cy="70" r="30" fill="#1a1a1a"/>
+            <!-- Body/Shoulders -->
+            <path d="M 60 100 Q 100 110 140 100 L 140 200 Q 100 190 60 200 Z" fill="#1a1a1a"/>
+          </svg>
+        </div>
+        <div class="info">
+          <h1>{{ name }}</h1>
+          <p class="subtitle">{{ title }}</p>
+        </div>
+      </a>
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li><a [routerLink]="['/']" [fragment]="'proyecto'" class="nav-link">Proyectos</a></li>
+        <li><a [routerLink]="['/']" [fragment]="'vr'" class="nav-link">VR</a></li>
+        <li><a [routerLink]="['/']" [fragment]="'gamejam'" class="nav-link">Game Jam</a></li>
+        <li><a [routerLink]="['/']" [fragment]="'about'" class="nav-link">Sobre mí</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

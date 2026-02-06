@@ -1,0 +1,113 @@
+.project-detail {
+  padding: 28px 20px;
+
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  .main {
+    flex: 1 1 auto;
+
+    .image-wrap {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 16px;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      .placeholder {
+        width: 100%;
+        height: 380px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f6f9ff;
+        border-radius: 10px;
+      }
+    }
+
+    .title {
+      font-size: 1.6rem;
+      margin: 0 0 12px 0;
+      font-weight: 700;
+      color: #24384f;
+    }
+
+    .description {
+      color: #475569;
+      line-height: 1.6;
+      margin: 0 0 18px 0;
+    }
+  }
+
+  .sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    background: #ffffff;
+    border: 1px solid #e6eefc;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(36,56,79,0.04);
+
+    .meta {
+      margin-bottom: 10px;
+      color: #334155;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .tags {
+      margin-top: 6px;
+
+      .tag {
+        display: inline-block;
+        background: #eef3fb;
+        color: #1f3b6f;
+        padding: 6px 10px;
+        margin: 4px 6px 0 0;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+    }
+
+    .links {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      a {
+        color: #ffffff;
+        background: #5b7fbf;
+        text-decoration: none;
+        padding: 8px 10px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 700;
+      }
+    }
+
+    @media (max-width: 900px) {
+      width: 100%;
+    }
+  }
+}
