@@ -8,7 +8,9 @@
     "category": ["proyecto"],
     "description": "Shooter espacial 2D con enemigos controlados por IA.",
     "tags": ["Unity", "C#", "2D"],
-    "images": [],
+    "images": [
+      "https://via.placeholder.com/1200x600.png?text=Space+Shooter"
+    ],
     "links": {
       "github": "https://github.com/tuusuario/space-shooter"
     }
