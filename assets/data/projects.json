@@ -11,7 +11,10 @@
     "longDescription": "Videojuego de estrategia con conquista de países mediante combate de cartas. Implementa un sistema de turno complejo con mecánicas de juego equilibradas para múltiples estrategias.",
     "tags": ["Unity", "C#", "2D", "Estrategia"],
     "images": [
-      "https://via.placeholder.com/1200x600.png?text=Space+Shooter"
+      "https://via.placeholder.com/1200x600.png?text=Van+Damme+1",
+      "https://via.placeholder.com/1200x600.png?text=Van+Damme+2",
+      "https://via.placeholder.com/1200x600.png?text=Van+Damme+3",
+      "https://via.placeholder.com/1200x600.png?text=Van+Damme+4"
     ],
     "links": {
       "github": "https://github.com/tuusuario/space-shooter"
@@ -44,7 +47,11 @@
     "shortDescription": "RPG de fantasía con combate por turnos.",
     "longDescription": "RPG de fantasía inmersivo con un elaborado sistema de combate por turnos, personajes únicos, una trama envolvente y un mundo detallado lleno de misterios por descubrir.",
     "tags": ["Unreal", "C++", "RPG"],
-    "images": [],
+    "images": [
+      "https://via.placeholder.com/1200x600.png?text=Fantasy+RPG+1",
+      "https://via.placeholder.com/1200x600.png?text=Fantasy+RPG+2",
+      "https://via.placeholder.com/1200x600.png?text=Fantasy+RPG+3"
+    ],
     "links": {
       "github": "https://github.com/tuusuario/fantasy-rpg"
     }
@@ -76,7 +83,13 @@
     "shortDescription": "Experiencia inmersiva de escape room en VR.",
     "longDescription": "Experiencia inmersiva de escape room en realidad virtual que desafía al jugador a resolver puzzles interactivos en un ambiente envolvente. Diseñado para mantener la tensión y proporcionar momentos de satisfacción al completar acertijos.",
     "tags": ["VR", "Unity", "C#", "Interactive"],
-    "images": [],
+    "images": [
+      "https://via.placeholder.com/1200x600.png?text=VR+Escape+1",
+      "https://via.placeholder.com/1200x600.png?text=VR+Escape+2",
+      "https://via.placeholder.com/1200x600.png?text=VR+Escape+3",
+      "https://via.placeholder.com/1200x600.png?text=VR+Escape+4",
+      "https://via.placeholder.com/1200x600.png?text=VR+Escape+5"
+    ],
     "links": {
       "github": "https://github.com/tuusuario/vr-escape-room"
     }
