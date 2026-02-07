@@ -31,7 +31,11 @@
     "shortDescription": "Juego de puzzles con mecánicas innovadoras.",
     "longDescription": "Juego de puzzles desafiante que combina mecánicas clásicas con innovaciones propias. Cada nivel presenta nuevos retos y ofrece una curva de dificultad progresiva que mantiene el interés del jugador.",
     "tags": ["Godot", "GDScript", "Puzzle"],
-    "images": [],
+    "images": [
+      "https://via.placeholder.com/1200x600.png?text=Puzzle+Master+1",
+      { "type": "video", "url": "https://via.placeholder.com/video" },
+      "https://via.placeholder.com/1200x600.png?text=Puzzle+Master+2"
+    ],
     "links": {
       "github": "https://github.com/tuusuario/puzzle-master"
     }
@@ -105,7 +109,11 @@
     "shortDescription": "Exploración en mundos virtuales detallados.",
     "longDescription": "Juego de exploración en VR que transporta al jugador a mundos virtuales cuidadosamente crafteados. Con ambientes detallados, efectos visuales avanzados y mecánicas intuitivas para una experiencia verdaderamente inmersiva.",
     "tags": ["VR", "Unreal", "C++", "Adventure"],
-    "images": [],
+    "images": [
+      "https://via.placeholder.com/1200x600.png?text=VR+Exploration+1",
+      { "type": "video", "url": "https://via.placeholder.com/video" },
+      "https://via.placeholder.com/1200x600.png?text=VR+Exploration+2"
+    ],
     "links": {
       "github": "https://github.com/tuusuario/vr-exploration"
     }
