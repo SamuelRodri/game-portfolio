@@ -143,3 +143,58 @@
     font-size: 0.9rem;
   }
 }
+
+.admin-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-left: 1px solid #d4dce5;
+  padding-left: 32px;
+
+  @media (max-width: 768px) {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+.admin-link {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+
+  &:hover {
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+    -webkit-text-fill-color: unset;
+  }
+}
+
+.logout-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s ease;
+  line-height: 1;
+
+  &:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+  }
+}
+

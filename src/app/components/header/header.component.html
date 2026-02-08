@@ -22,6 +22,13 @@
         <li><a [routerLink]="['/']" [fragment]="'vr'" class="nav-link">VR</a></li>
         <li><a [routerLink]="['/']" [fragment]="'gamejam'" class="nav-link">Game Jam</a></li>
         <li><a [routerLink]="['/']" [fragment]="'about'" class="nav-link">Sobre mí</a></li>
+        <li *ngIf="isAdmin$ | async" class="admin-section">
+          <a [routerLink]="['/admin']" class="nav-link admin-link">⚙️ Admin</a>
+          <button (click)="logout()" class="logout-btn" title="Cerrar sesión">×</button>
+        </li>
+        <li *ngIf="!(isAuthenticated$ | async) && !(isAdmin$ | async)" class="admin-section">
+          <a [routerLink]="['/login']" class="nav-link admin-link">🔒 Admin</a>
+        </li>
       </ul>
     </nav>
   </div>

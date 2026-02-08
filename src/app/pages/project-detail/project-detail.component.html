@@ -1,21 +1,77 @@
 <section *ngIf="project; else notFound" class="project-detail">
   <div class="content">
     <div class="main">
-      <div class="image-wrap">
-        <img *ngIf="project.images && project.images.length > 0; else placeholder"
-             [src]="project.images[0]"
-             [alt]="project.title">
+      <!-- Imagen/Video principal con navegación -->
+      <div class="media-wrap">
+        <ng-container *ngIf="getAllMedia().length > 0 && canDisplayImage(getAllMedia()[selectedImageIndex]); else placeholder">
+          <!-- Video -->
+          <video *ngIf="isVideo(getAllMedia()[selectedImageIndex]);"
+                 [src]="getMediaUrl(getAllMedia()[selectedImageIndex])"
+                 controls
+                 controlsList="nodownload"
+                 class="main-video">
+          </video>
+          <!-- Imagen -->
+          <img *ngIf="!isVideo(getAllMedia()[selectedImageIndex])"
+               [src]="getMediaUrl(getAllMedia()[selectedImageIndex])"
+               [alt]="project.title"
+               (error)="onImageError(getMediaUrl(getAllMedia()[selectedImageIndex]))"
+               class="main-image">
+        </ng-container>
         <ng-template #placeholder>
           <div class="placeholder">
             <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
               <rect width="100%" height="100%" fill="#eef3fb" />
-              <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#a3b3d1" font-size="28">No hay imagen</text>
+              <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#a3b3d1" font-size="28">No hay contenido</text>
             </svg>
           </div>
         </ng-template>
+
+        <!-- Botones de navegación -->
+        <div *ngIf="getAllMedia().length > 1" class="media-controls">
+          <button class="control-btn prev-btn" (click)="previousMedia()" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <span class="media-counter">{{ selectedImageIndex + 1 }} / {{ getAllMedia().length }}</span>
+          <button class="control-btn next-btn" (click)="nextMedia()" aria-label="Siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19l7-7-7-7"></path>
+            </svg>
+          </button>
+        </div>
       </div>
-      <h1 class="title">{{ project.title }}</h1>
-      <p class="description">{{ project.description }}</p>
+
+      <!-- Carrusel de miniaturas (Imágenes + Video) -->
+      <div *ngIf="getAllMedia().length > 1" class="thumbnails-carousel">
+        <div class="thumbnails-container">
+          <button *ngFor="let media of getAllMedia(); let i = index"
+                  class="thumbnail"
+                  [class.active]="selectedImageIndex === i"
+                  (click)="selectImage(i)"
+                  [attr.aria-label]="(isVideo(media) ? 'Ver video ' : 'Ver imagen ') + (i + 1)">
+            <div class="thumbnail-content">
+              <img *ngIf="canDisplayImage(media) && !isVideo(media)"
+                   [src]="getMediaUrl(media)"
+                   [alt]="'Miniatura ' + (i + 1)"
+                   (error)="onImageError(getMediaUrl(media))">
+              <div *ngIf="isVideo(media)" class="video-thumbnail">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="100" height="100" fill="#333"/>
+                  <polygon points="35,25 35,75 75,50" fill="#fff"/>
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="header-with-status">
+        <h1 class="title">{{ project.title }}</h1>
+        <span class="status-badge" [ngClass]="'status-' + project.status">{{ getStatusLabel(project.status) }}</span>
+      </div>
+      <p class="description">{{ project.longDescription }}</p>
     </div>
 
     <aside class="sidebar">

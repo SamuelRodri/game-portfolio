@@ -18,6 +18,9 @@ export class AppComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+    // Manejar redirecciones desde 404.html de GitHub Pages
+    this.handleGitHubPagesRedirect();
+
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
@@ -31,5 +34,17 @@ export class AppComponent implements OnInit {
           }, 100);
         }
       });
+  }
+
+  private handleGitHubPagesRedirect(): void {
+    const params = new URLSearchParams(window.location.search);
+    const p = params.get('p');
+
+    if (p) {
+      // Restaurar la ruta original desde el parámetro 'p'
+      const path = p.replace(/~and~/g, '&');
+      window.history.replaceState(null, '', window.location.pathname.replace(/\/$/, '') + '/' + path);
+      this.router.navigateByUrl(path);
+    }
   }
 }

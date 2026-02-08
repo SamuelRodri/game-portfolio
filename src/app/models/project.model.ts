@@ -1,3 +1,5 @@
+export type MediaItem = string | { type: 'video' | 'image'; url: string };
+
 export interface Project {
   id: string;
   title: string;
@@ -5,13 +7,16 @@ export interface Project {
   language: string;
   year: number;
   category: ('proyecto' | 'gamejam' | 'vr')[];
-  description: string;
+  status: 'terminado' | 'en-desarrollo' | 'pausado' | 'prototipo';
+  shortDescription: string;
+  longDescription: string;
   tags: string[];
-  images: string[];
-  video?: string;
+  images: MediaItem[];
+  video: string | null;
   links: {
-    github?: string;
-    itch?: string;
-    demo?: string;
+    github: string | null;
+    itch: string | null;
+    demo: string | null;
   };
+  order?: number;
 }

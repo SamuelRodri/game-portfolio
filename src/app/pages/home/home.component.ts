@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ProjectsService } from '../../core/services/projects.service';
+import { ProjectsDataService } from '../../core/services/projects-data.service';
 import { Project } from '../../models/project.model';
 
 @Component({
@@ -20,8 +20,9 @@ export class HomeComponent implements OnInit {
     'vr': 'Realidad Virtual',
     'gamejam': 'Game Jam'
   };
+  failedImages = new Set<string>();
 
-  constructor(private projectsService: ProjectsService) {}
+  constructor(private projectsService: ProjectsDataService) {}
 
   ngOnInit(): void {
     this.projectsService.getAll().subscribe(projects => {
@@ -30,7 +31,16 @@ export class HomeComponent implements OnInit {
         const categoryProjects = projects.filter(p =>
           Array.isArray(p.category) ? p.category.includes(category as any) : p.category === category
         );
+        // Ordenar por propiedad 'order', luego por año descendente
         if (categoryProjects.length > 0) {
+          categoryProjects.sort((a, b) => {
+            const orderA = a.order ?? 999;
+            const orderB = b.order ?? 999;
+            if (orderA !== orderB) {
+              return orderA - orderB;
+            }
+            return b.year - a.year;
+          });
           this.categories.set(category, categoryProjects);
         }
       });
@@ -56,5 +66,30 @@ export class HomeComponent implements OnInit {
       groups.push(projects.slice(i, i + 3));
     }
     return groups;
+  }
+
+  onImageError(imageUrl: string): void {
+    this.failedImages.add(imageUrl);
+  }
+
+  getFirstValidImage(project: Project): string | null {
+    if (!project.images || project.images.length === 0) {
+      return null;
+    }
+    const firstImage = project.images[0];
+    const imageUrl = typeof firstImage === 'string' ? firstImage : firstImage.url;
+    return (this.failedImages.has(imageUrl) || !this.isValidImageUrl(imageUrl)) ? null : imageUrl;
+  }
+
+  isValidImageUrl(url: string): boolean {
+    if (!url || typeof url !== 'string') {
+      return false;
+    }
+    // Bloquear URLs conocidas como inválidas
+    if (url.includes('via.placeholder.com')) {
+      return false;
+    }
+    // Debe empezar con http:// o https://
+    return url.startsWith('http://') || url.startsWith('https://');
   }
 }
