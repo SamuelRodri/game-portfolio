@@ -1,0 +1,66 @@
+{
+  "NAV": {
+    "ABOUT": "Sobre mí",
+    "ADMIN_LINK": "Admin",
+    "OPEN_MENU": "Abrir menú",
+    "GO_HOME": "Ir al inicio",
+    "CLOSE_SESSION": "Cerrar sesión"
+  },
+  "EDIT": {
+    "ACTIVATE": "🔒 Activar edición",
+    "EXIT": "✓ Salir de edición"
+  },
+  "CAROUSEL": {
+    "SLIDE": "Diapositiva",
+    "PREV": "Anterior",
+    "NEXT": "Siguiente"
+  },
+  "REORDER": {
+    "UP": "Mover hacia arriba",
+    "DOWN": "Mover hacia abajo"
+  },
+  "LOADING": {
+    "PROJECTS": "Cargando proyectos...",
+    "PROJECT": "Cargando proyecto..."
+  },
+  "NOT_FOUND": "Proyecto no encontrado",
+  "MEDIA": {
+    "NO_CONTENT": "No hay contenido",
+    "NO_VIDEO_SUPPORT": "Tu navegador no soporta la reproducción de vídeo.",
+    "VIEW_VIDEO": "Ver video",
+    "VIEW_IMAGE": "Ver imagen",
+    "THUMBNAIL": "Miniatura"
+  },
+  "PROJECT": {
+    "ROLE": "Rol:",
+    "ENGINE": "Motor:",
+    "YEAR": "Año:",
+    "LANGUAGE": "Lenguaje:",
+    "PLATFORMS": "Plataformas:",
+    "JAM": "Jam:",
+    "AWARDS": "Premios:",
+    "TAGS": "Etiquetas:",
+    "STATUS": {
+      "terminado": "Terminado",
+      "en-desarrollo": "En Desarrollo",
+      "pausado": "Pausado",
+      "prototipo": "Prototipo"
+    }
+  },
+  "CATEGORIES": {
+    "proyectos-destacados": "Proyectos Destacados",
+    "realidad-virtual": "Realidad Virtual",
+    "juegos-gamejams": "Juegos de GameJams"
+  },
+  "ABOUT": {
+    "TITLE": "Sobre mí",
+    "BIO1": "Soy desarrollador de videojuegos con experiencia en Unity, Godot y Unreal. Me especializo en diseño de mecánicas, programación de sistemas y VR. Actualmente estoy cursando un máster en Diseño y Desarrollo de Videojuegos, donde profundizo en diseño e implementación para crear experiencias inmersivas y atractivas.",
+    "BIO2": "Disfruto colaborando en game jams y experimentando con nuevas tecnologías y conceptos creativos bajo presión.",
+    "SKILLS_TITLE": "Habilidades técnicas",
+    "SKILL1": "Motores: Unity (C#), Godot (GDScript), Unreal Engine",
+    "SKILL2": "Conceptos: Programación orientada a objetos, Sistemas de juego, VR, Diseño",
+    "SKILL3": "Patrones de diseño: Object Pooling, Command, Strategy",
+    "SOCIAL_TITLE": "Conecta conmigo",
+    "PROFILE_ALT": "Samuel Rodríguez"
+  }
+}
